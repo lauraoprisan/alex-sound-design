@@ -1,0 +1,142 @@
+* {
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+html{
+    font-size:62.5%;
+    color:black;
+}
+
+.container{
+    padding:100px 15%;
+}
+h1{
+    font-size:3.5rem;
+    font-weight:700;
+    text-align:center;
+}
+h2{
+    display:block;
+    font-size:3.2rem;
+    margin-bottom:50px;
+    text-align:center;
+    padding-bottom:20px;
+    border-bottom:1px solid rgba(0, 0, 0,0.5);
+}
+p, a{
+    font-size:1.6rem;
+}
+
+/*HEADER*/
+header.container{
+    padding-top:50px;
+    padding-bottom:50px;
+    background-color:burlywood;
+}
+header ul{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+header li a{
+    display:block;
+    text-decoration: none;
+    color:black;
+    padding:15px 20px;
+    font-size:2rem;
+}
+
+header li a:hover{
+    color:blue;
+}
+
+/*/HEADER*/
+
+/*MAIN*/
+main.container{
+    padding-top:0;
+    background-color:burlywood;
+}
+
+/* VIDEO DEMO REEL*/
+.videoDemoReel{
+    display:flex;
+    flex-direction:column;
+    justify-content: flex-start;
+    align-items: center;
+    background-color:rgb(169, 169, 169);
+}
+
+.iframeContainer{
+    padding:0;
+    position:relative;
+    height:0;
+    width:100%;
+    padding-bottom:56.25%;
+
+}
+
+iframe{
+    position:absolute;
+    top:0;
+    left:0;
+    bottom:0;
+    right:0;
+    width:100%;
+    height:100%;
+}
+
+/* /VIDEO DEMO REEL*/
+/*/MAIN*/
+
+
+/*ABOUT*/
+.about{
+    background-color:grey;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    color:white;
+}
+
+.flex-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.about .flex-row > *{
+    flex-basis:50%;
+    padding:0 20px;
+}
+
+.about-left{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+}
+
+button{
+    padding:20px 70px;
+    font-size:2rem;
+    margin-top:50px;
+    background-color:rgba(255, 255, 255, 0.2);
+    color:rgba(255, 255, 255, 0.8);
+    border:5px rgb(255, 255, 255);
+}
+button:hover{
+    background-color:rgba(255, 255, 255, 0.5);
+    color:rgba(255, 255, 255, 1);
+}
+
+.about p{
+    font-size:1.8rem;
+    line-height:1.5;
+    margin-bottom:10px;
+}
+/*/ABOUT*/
+
