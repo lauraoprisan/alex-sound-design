@@ -32,9 +32,9 @@ let videoImgThree = document.querySelector('.project3')
 let videoImgFour = document.querySelector('.project4')
 let videoImgFive = document.querySelector('.project5')
 let videoImgSix = document.querySelector('.project6')
-// let videoImgSeven = document.querySelector('.project7')
-// let videoImgEight = document.querySelector('.project8')
-// let videoImgNine = document.querySelector('.project9')
+let videoImgSeven = document.querySelector('.project7')
+let videoImgEight = document.querySelector('.project8')
+let videoImgNine = document.querySelector('.project9')
 let projectVideo = document.querySelector(".projectVideo")
 videoImgOne.addEventListener("click", getToVideoOne)
 videoImgTwo.addEventListener("click", getToVideoTwo)
@@ -42,45 +42,47 @@ videoImgThree.addEventListener("click", getToVideoThree)
 videoImgFour.addEventListener("click", getToVideoFour)
 videoImgFive.addEventListener("click", getToVideoFive)
 videoImgSix.addEventListener("click", getToVideoSix)
-// videoImgSeven.addEventListener("click", getToVideoSeven)
-// videoImgEight.addEventListener("click", getToVideoEight)
-// videoImgNine.addEventListener("click", getToVideoEight)
+videoImgSeven.addEventListener("click", getToVideoSeven)
+videoImgEight.addEventListener("click", getToVideoEight)
+videoImgNine.addEventListener("click", getToVideoNine)
+
+
 
 function getToVideoOne(){
-    projectVideo.src="https://www.youtube.com/embed/r0B4j7YHJS0"
+    projectVideo.src="https://www.youtube.com/embed/G2kUBXxUgVs"
     }
 
 function getToVideoTwo(){
-    projectVideo.src="https://www.youtube.com/embed/7I-EdpKp4TI"
+    projectVideo.src="https://www.youtube.com/embed/r0B4j7YHJS0"
     }
 
 function getToVideoThree(){
-    projectVideo.src="https://www.youtube.com/embed/au_5dIoV2P0"
+    projectVideo.src="https://www.youtube.com/embed/7I-EdpKp4TI"
     }
 
 function getToVideoFour(){
-    projectVideo.src="https://www.youtube.com/embed/sDTEPpitDGU"
+    projectVideo.src="https://www.youtube.com/embed/au_5dIoV2P0"
     }
+
 function getToVideoFive(){
-    projectVideo.src="https://www.youtube.com/embed/Emh8XkaWalI"
+    projectVideo.src="https://www.youtube.com/embed/sDTEPpitDGU"
     }
 
 function getToVideoSix(){
-    projectVideo.src="https://www.youtube.com/embed/cWDFPKRUZBA"
+    projectVideo.src="https://www.youtube.com/embed/Emh8XkaWalI"
     }
 
+function getToVideoSeven(){
+    projectVideo.src="https://www.youtube.com/embed/Wjy39nN7WzM"
+    }
 
-// function getToVideoSeven(){
-//     projectVideo.src="https://www.youtube.com/embed/kRQmCEfN1JY"
-//     }
-// function getToVideoNine(){
-//     projectVideo.src="https://www.youtube.com/embed/kRQmCEfN1JY"
-//     }
-// function getToVideoEight(){
-//     projectVideo.src="https://www.youtube.com/embed/kRQmCEfN1JY"
-//     }
+function getToVideoEight(){
+    projectVideo.src="https://www.youtube.com/embed/_AlVhOF2z4c"
+    }
 
-
+function getToVideoNine(){
+    projectVideo.src="https://www.youtube.com/embed/cWDFPKRUZBA"
+    }
 
 
 
@@ -93,9 +95,9 @@ videoImg[2].addEventListener("click", goToVideo)
 videoImg[3].addEventListener("click", goToVideo)
 videoImg[4].addEventListener("click", goToVideo)
 videoImg[5].addEventListener("click", goToVideo)
-// videoImg[6].addEventListener("click", goToVideo)
-// videoImg[7].addEventListener("click", goToVideo)
-// videoImg[8].addEventListener("click", goToVideo)
+videoImg[6].addEventListener("click", goToVideo)
+videoImg[7].addEventListener("click", goToVideo)
+videoImg[8].addEventListener("click", goToVideo)
 function goToVideo(e){
     Array.from(videoImg)
     e.preventDefault();
@@ -366,12 +368,15 @@ changeImgSrc()
 
 window.addEventListener("resize", ()=>{
     if(window.innerWidth > 1920){
-        document.querySelector('.project1-mare').src ="img/project1-mare.jpg"
+        document.querySelector('.project1-mare').src ="img/project1.jpg"
         document.querySelector('.project2-mare').src ="img/project2-mare.jpg"
         document.querySelector('.project3-mare').src ="img/project3-mare.jpg"
         document.querySelector('.project4-mare').src ="img/project4-mare.jpg"
         document.querySelector('.project5-mare').src ="img/project5-mare.jpg"
         document.querySelector('.project6-mare').src ="img/project6-mare.jpg"
+        document.querySelector('.project7-mare').src ="img/project7-mare.jpg"
+        document.querySelector('.project8-mare').src ="img/project8-mare.jpg"
+        document.querySelector('.project9-mare').src ="img/project9-mare.jpg"
     } else{
         document.querySelector('.project1-mare').src ="img/project1.jpg"
         document.querySelector('.project2-mare').src ="img/project2.jpg"
@@ -379,6 +384,9 @@ window.addEventListener("resize", ()=>{
         document.querySelector('.project4-mare').src ="img/project4.jpg"
         document.querySelector('.project5-mare').src ="img/project5.jpg"
         document.querySelector('.project6-mare').src ="img/project6.jpg"
+        document.querySelector('.project7-mare').src ="img/project7.jpg"
+        document.querySelector('.project8-mare').src ="img/project8.jpg"
+        document.querySelector('.project9-mare').src ="img/project9.jpg"
     }
   
 })
