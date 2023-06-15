@@ -24,113 +24,23 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor =>{
     })
 })
 
-//la click pe poza ar trebui sa imi ia printr-un api url-ul care trebuie si sa il insereze in src pt iframe. in acelasi timp sa dea si scroll incat sa intre videoul acolo si sa inceapa automat ca sa nu mai existe inca un click
 
-let videoImgOne = document.querySelector('.project1')
-let videoImgTwo = document.querySelector('.project2')
-let videoImgThree = document.querySelector('.project3')
-let videoImgFour = document.querySelector('.project4')
-let videoImgFive = document.querySelector('.project5')
-let videoImgSix = document.querySelector('.project6')
-let videoImgSeven = document.querySelector('.project7')
-let videoImgEight = document.querySelector('.project8')
-let videoImgNine = document.querySelector('.project9')
-let projectVideo = document.querySelector(".projectVideo")
-videoImgOne.addEventListener("click", getToVideoOne)
-videoImgTwo.addEventListener("click", getToVideoTwo)
-videoImgThree.addEventListener("click", getToVideoThree)
-videoImgFour.addEventListener("click", getToVideoFour)
-videoImgFive.addEventListener("click", getToVideoFive)
-videoImgSix.addEventListener("click", getToVideoSix)
-videoImgSeven.addEventListener("click", getToVideoSeven)
-videoImgEight.addEventListener("click", getToVideoEight)
-videoImgNine.addEventListener("click", getToVideoNine)
+//change project video URL depending on the clicked project and scroll to the project video
 
+const videoImgElements = document.querySelectorAll('.project');
+const projectVideo = document.querySelector('.projectVideo');
 
-
-function getToVideoOne(){
-    projectVideo.src="https://www.youtube.com/embed/G2kUBXxUgVs"
-    }
-
-function getToVideoTwo(){
-    projectVideo.src="https://www.youtube.com/embed/r0B4j7YHJS0"
-    }
-
-function getToVideoThree(){
-    projectVideo.src="https://www.youtube.com/embed/7I-EdpKp4TI"
-    }
-
-function getToVideoFour(){
-    projectVideo.src="https://www.youtube.com/embed/au_5dIoV2P0"
-    }
-
-function getToVideoFive(){
-    projectVideo.src="https://www.youtube.com/embed/sDTEPpitDGU"
-    }
-
-function getToVideoSix(){
-    projectVideo.src="https://www.youtube.com/embed/Emh8XkaWalI"
-    }
-
-function getToVideoSeven(){
-    projectVideo.src="https://www.youtube.com/embed/Wjy39nN7WzM"
-    }
-
-function getToVideoEight(){
-    projectVideo.src="https://www.youtube.com/embed/_AlVhOF2z4c"
-    }
-
-function getToVideoNine(){
-    projectVideo.src="https://www.youtube.com/embed/cWDFPKRUZBA"
-    }
-
-
-
-//scroll to project video
-
-let videoImg = document.querySelectorAll(".image")
-videoImg[0].addEventListener("click", goToVideo)
-videoImg[1].addEventListener("click", goToVideo)
-videoImg[2].addEventListener("click", goToVideo)
-videoImg[3].addEventListener("click", goToVideo)
-videoImg[4].addEventListener("click", goToVideo)
-videoImg[5].addEventListener("click", goToVideo)
-videoImg[6].addEventListener("click", goToVideo)
-videoImg[7].addEventListener("click", goToVideo)
-videoImg[8].addEventListener("click", goToVideo)
-function goToVideo(e){
-    Array.from(videoImg)
-    e.preventDefault();
-    document.querySelector("#projectVideo").scrollIntoView({
-        behavior:"smooth",
-        block:"center",
-        incline:"center"
-    })
-}
-
-
-
-// $(document).ready(function(){
-//     $(".item").click(function(){
-//         let youtube_id=$(this).children("img").attr("data-id");
-//         console.log(youtube_id)
-//     })
-// })
-
-
-// let videoImg = document.querySelectorAll('.project-img')
-// let projectVideo = document.querySelector(".projectVideo")
-// let arrayProjectImg = (Array.from(videoImg); 
-// videoImg.addEventListener("click", getToVideoOne){
-//     arrayProjectImg.forEach((item,index) =>{
-//         if (arrayProjectImg[index].classList.contains("projectOne"))
-//     })
-// }
-
-// function getToVideoOne(){
-//     projectVideo.src="https://www.youtube.com/embed/r0B4j7YHJS0"
-//     }
-
+videoImgElements.forEach((element) => {
+  element.addEventListener('click', () => {
+        projectVideo.scrollIntoView({
+            behavior: 'smooth',
+            block: 'center',
+            inline: 'center'
+        });
+        const videoUrl = element.dataset.videoUrl;
+        projectVideo.src = videoUrl;
+  });
+});
 
 // detecting direction of scroll (up or down)
 
@@ -275,40 +185,7 @@ function hideText(){
     textPlay.classList.remove('show-text');
 }
 
-//CHANGE HAMBURGER MENU COLOR
-
-            // $(document).ready(function() {
-            //     if (window.location.pathname+window.location.hash == '../index.html#projects') {
-            //         console.log('Viewing contact form');
-            //     }
-            // });
-
-            // const target = document.querySelector("#projects");
-
-            // function callback(entries) {
-            //   console.log("this is section one");
-            // }
-
-            // const observer = new IntersectionObserver(callback);
-
-            // observer.observe(target);
-
-            // const projectsSection = document.querySelector('#projects');
-            // projectsSection.addEventListener("scroll", event =>{
-            //     console.log(projectsSection.scrollTop)
-            // },{passive:true});
-
-            // window.addEventListener('scroll', (event)=>{
-            //     let scroll=this.scrollY;
-            //     console.log(scroll)
-            // })
-
-
-
-
-
-
-
+//CHANGE HAMBURGER MENU COLOR (DEPENDING ON THE SECTIONS' BG COLOR)
 
 const projectsSection = document.querySelector('#projects');
 
@@ -333,12 +210,6 @@ function getPositionOfProjects(){
 
 
 
-
-
-
-
-
-
 //change video depending on viewport width
 
 window.addEventListener('resize', changeVideoSrc)
@@ -353,7 +224,7 @@ function changeVideoSrc(){
 }
 changeVideoSrc()
 
-//change about photo depending on viewport
+//change photo from about section depending on viewport
 let imgAboutSrc = document.querySelector('.img-about')
 function changeImgSrc(){
     if(window.innerWidth > 2030){
@@ -366,34 +237,30 @@ changeImgSrc()
 
 //change project photo depending on viewport
 
-window.addEventListener("resize", ()=>{
-    if(window.innerWidth > 1920){
-        document.querySelector('.project1-mare').src ="img/project1.jpg"
-        document.querySelector('.project2-mare').src ="img/project2-mare.jpg"
-        document.querySelector('.project3-mare').src ="img/project3-mare.jpg"
-        document.querySelector('.project4-mare').src ="img/project4-mare.jpg"
-        document.querySelector('.project5-mare').src ="img/project5-mare.jpg"
-        document.querySelector('.project6-mare').src ="img/project6-mare.jpg"
-        document.querySelector('.project7-mare').src ="img/project7-mare.jpg"
-        document.querySelector('.project8-mare').src ="img/project8-mare.jpg"
-        document.querySelector('.project9-mare').src ="img/project9-mare.jpg"
-    } else{
-        document.querySelector('.project1-mare').src ="img/project1.jpg"
-        document.querySelector('.project2-mare').src ="img/project2.jpg"
-        document.querySelector('.project3-mare').src ="img/project3.jpg"
-        document.querySelector('.project4-mare').src ="img/project4.jpg"
-        document.querySelector('.project5-mare').src ="img/project5.jpg"
-        document.querySelector('.project6-mare').src ="img/project6.jpg"
-        document.querySelector('.project7-mare').src ="img/project7.jpg"
-        document.querySelector('.project8-mare').src ="img/project8.jpg"
-        document.querySelector('.project9-mare').src ="img/project9.jpg"
-    }
+const projects = [
+    "project2",
+    "project3",
+    "project4",
+    "project5",
+    "project6",
+    "project7",
+    "project8",
+    "project9",
+  ];
   
-})
+  const updateProjectPhotos = () => {
+    const isLargeViewport = window.innerWidth > 1920;
+    const imageSuffix = isLargeViewport ? "-mare" : "";
+  
+    projects.forEach((project) => {
+      const imageElement = document.querySelector(`.${project}${imageSuffix}`);
+      imageElement.src = `img/${project}${imageSuffix}.jpg`;
+    });
+  };
+  
+  window.addEventListener("resize", updateProjectPhotos);
 
 //AUDIO CIRCLES
-
-
 let audioCircles= document.querySelectorAll('.main-circle')
 audioCircles.forEach(circle =>  circle.addEventListener("mouseover", ()=>{
     const audio = document.querySelector(`.${circle.dataset.key}`)
@@ -402,11 +269,6 @@ audioCircles.forEach(circle =>  circle.addEventListener("mouseover", ()=>{
     document.querySelector('.comment-2').classList.add('no-display')
   
 }))
-
-// let audioCircless= document.querySelectorAll('.main-circle')
-// audioCircless.forEach(circle =>  circle.addEventListener('mouseover', ()=>{
-//     alert('hei')
-// }))
 
 
 
